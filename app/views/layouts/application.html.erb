@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shouter</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> 
+<hr></br>
+<% if user_signed_in? %>
+  <p>Hi <%= current_user.email %></p>
+<%= link_to 'Sign_out', destroy_user_session_path, method: :delete %>
+<% else %> 
+  <%= link_to 'Sign_in', user_session_path%>
+<%= link_to 'Sign_up', new_user_registration_path %>
+<% end %>
+<hr></br>
+
+<%= yield %>
+
+</body>
+</html>

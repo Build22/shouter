@@ -1,0 +1,24 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  database: shouter_d
+  host: localhost 
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: shouter_p
+  pool: 5
+  host: localhost
+  password: root
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: shouter_t
+  pool: 5
+  host: localhost
+  password: root
