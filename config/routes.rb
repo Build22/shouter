@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'text_shouts/create'
+
   devise_for :users
   root to: "homes#show", via: :get
   resource :dashboard, only: [:show]
-  resources :shouts, only: [:create, :show]
-
+  resources :shouts, only: [:show, :create]
+  resources :text_shouts, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
