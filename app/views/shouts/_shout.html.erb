@@ -1,6 +1,9 @@
 <%= div_for shout do %> 
   <%= link_to shout.user.username, dashboard_path %>
 shouted
-<strong>  <%= render shout.content %> </strong>
+<div>
+  <strong>  <%= render shout.content %> </strong>
+</div>
+
 <%= link_to time_ago_in_words(shout.created_at), shout %> ago
 <% end %> 

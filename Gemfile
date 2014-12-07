@@ -40,4 +40,5 @@ gem 'mysql2'
 
 gem 'devise'
 
+gem 'paperclip', '3.4.0'
 
