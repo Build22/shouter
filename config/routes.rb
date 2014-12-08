@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "homes#show", via: :get
   resource :dashboard, only: [:show]
-  resources :shouts, only: [:show, :create]
+  resources :shouts, only: [:show]
   resources :text_shouts, only: [:create]
   resources :photo_shouts, only: [:create]
 
