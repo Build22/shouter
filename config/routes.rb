@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
-
   devise_for :users
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    post 'follow' => 'following_relationships#create'
+  end
   root to: "homes#show", via: :get
   resource :dashboard, only: [:show]
   resources :shouts, only: [:show]
