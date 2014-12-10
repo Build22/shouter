@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
+  resources :users, only: [:index, :show]
   root to: "homes#show", via: :get
   resource :dashboard, only: [:show]
   resources :shouts, only: [:show]
