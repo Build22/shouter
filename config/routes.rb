@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show] do
     post 'follow' => 'following_relationships#create'
+    delete 'follow' => 'following_relationships#destroy'
   end
   root to: "homes#show", via: :get
   resource :dashboard, only: [:show]
